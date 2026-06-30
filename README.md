@@ -1,0 +1,1 @@
+# School-management-system-with-financial-report-and-exams-by-deep-seek-Version-2-
