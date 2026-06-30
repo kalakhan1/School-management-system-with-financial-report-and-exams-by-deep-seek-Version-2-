@@ -38,25 +38,77 @@
     .student-id-badge { background: #e8eaf6; color: #1a237e; padding: 3px 8px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; }
     .badge-paid { background: #4caf50; color: #fff; padding: 5px 10px; border-radius: 15px; font-size: 0.75rem; }
     .badge-unpaid { background: #f44336; color: #fff; padding: 5px 10px; border-radius: 15px; font-size: 0.75rem; }
-    .id-card-front { width: 370px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif; background: #fff; }
+
+    /* ============ ORIGINAL ID CARD CSS (VERSION 1 STYLE) ============ */
+    .id-card-front {
+      width: 370px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2);
+      font-family: 'Segoe UI', system-ui, sans-serif; background: #fff;
+    }
     .id-card-front .card-top-bar { height: 8px; background: linear-gradient(90deg, #ff6f00, #ff8f00, #ff6f00); }
-    .id-card-front .card-header-section { background: linear-gradient(135deg, #1a237e, #283593, #0d47a1); padding: 25px 20px 35px; text-align: center; color: #fff; position: relative; }
-    .id-card-front .school-logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-bottom: 5px; }
-    .id-card-front .card-header-section::after { content: ''; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 25px solid transparent; border-right: 25px solid transparent; border-top: 20px solid #0d47a1; }
-    .id-card-front .card-body-section { padding: 40px 25px 20px; text-align: center; }
-    .id-card-front .photo-container { width: 100px; height: 100px; border-radius: 50%; border: 5px solid #1a237e; margin: -70px auto 15px; position: relative; z-index: 5; overflow: hidden; box-shadow: 0 8px 25px rgba(26,35,126,0.3); background: #e8eaf6; }
+    .id-card-front .card-header-section {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #0d47a1 100%);
+      padding: 25px 20px 35px; text-align: center; color: #fff; position: relative;
+    }
+    .id-card-front .card-header-section .school-name {
+      font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; margin: 0; text-transform: uppercase;
+    }
+    .id-card-front .card-header-section .school-motto {
+      font-size: 0.75rem; opacity: 0.85; font-style: italic; margin-top: 3px;
+    }
+    .id-card-front .card-header-section .card-badge {
+      position: absolute; top: 15px; right: 15px;
+      background: #ff6f00; color: #fff; padding: 4px 12px; border-radius: 20px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+    }
+    .id-card-front .card-header-section::after {
+      content: ''; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0; border-left: 25px solid transparent; border-right: 25px solid transparent;
+      border-top: 20px solid #0d47a1;
+    }
+    .id-card-front .card-body-section { padding: 40px 25px 20px; text-align: center; position: relative; }
+    .id-card-front .photo-container {
+      width: 100px; height: 100px; border-radius: 50%; border: 5px solid #1a237e;
+      margin: -70px auto 15px; position: relative; z-index: 5; overflow: hidden;
+      box-shadow: 0 8px 25px rgba(26,35,126,0.3); background: #e8eaf6;
+    }
     .id-card-front .photo-container img { width: 100%; height: 100%; object-fit: cover; }
-    .id-card-front .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; margin-top: 15px; padding: 15px; background: #f8f9ff; border-radius: 12px; }
-    .id-card-front .detail-label { font-size: 0.7rem; color: #666; text-transform: uppercase; font-weight: 600; }
+    .id-card-front .student-name {
+      font-size: 1.2rem; font-weight: 700; color: #1a237e; margin: 5px 0; text-transform: uppercase;
+    }
+    .id-card-front .details-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      text-align: left; margin-top: 15px; padding: 15px;
+      background: #f8f9ff; border-radius: 12px;
+    }
+    .id-card-front .detail-item { padding: 5px 0; }
+    .id-card-front .detail-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
     .id-card-front .detail-value { font-size: 0.85rem; color: #1a237e; font-weight: 600; }
-    .id-card-front .card-footer-section { background: linear-gradient(135deg, #1a237e, #0d47a1); padding: 12px 25px; text-align: center; color: #fff; font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
-    .id-card-back { width: 370px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.3); background: linear-gradient(135deg, #f5f7fa, #e0e4f0); }
+    .id-card-front .card-footer-section {
+      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      padding: 12px 25px; text-align: center; color: #fff; font-size: 0.75rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .id-card-front .qr-section { background: #fff; border-radius: 10px; padding: 5px; display: inline-block; }
+
+    .id-card-back {
+      width: 370px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #f5f7fa, #e0e4f0);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    .id-card-back .card-top-bar { height: 8px; background: linear-gradient(90deg, #1a237e, #283593, #1a237e); }
     .id-card-back .back-content { padding: 30px 25px; text-align: center; }
-    .id-card-back .emergency-section { background: #fff; border-radius: 15px; padding: 20px; margin: 15px 0; }
-    .id-card-back .back-footer { background: linear-gradient(135deg, #1a237e, #0d47a1); padding: 12px 25px; text-align: center; color: #fff; }
+    .id-card-back .back-content h5 { color: #1a237e; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .id-card-back .emergency-section { background: #fff; border-radius: 15px; padding: 20px; margin: 15px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+    .id-card-back .emergency-section h6 { color: #c62828; font-weight: 700; margin-bottom: 10px; }
+    .id-card-back .emergency-section p { margin: 5px 0; font-size: 0.9rem; color: #333; }
+    .id-card-back .terms-section { font-size: 0.75rem; color: #666; margin-top: 15px; padding: 10px; background: rgba(26,35,126,0.05); border-radius: 10px; }
+    .id-card-back .back-footer { background: linear-gradient(135deg, #1a237e, #0d47a1); padding: 12px 25px; text-align: center; color: #fff; font-size: 0.8rem; font-weight: 600; }
+
     #loadingOverlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 9999; flex-direction: column; }
-    @media print { .sidebar, .topbar, .no-print, #loadingOverlay { display: none !important; } .main-area { margin: 0 !important; } }
-    @media (max-width: 768px) { .sidebar { transform: translateX(-100%); } .sidebar.show { transform: translateX(0); } .main-area { margin-left: 0; } }
+    @media print { .sidebar, .topbar, .no-print, #loadingOverlay { display: none !important; } .main-area { margin: 0 !important; } .id-card-front, .id-card-back { box-shadow: none !important; } }
+    @media (max-width: 768px) { .sidebar { transform: translateX(-100%); } .sidebar.show { transform: translateX(0); } .main-area { margin-left: 0; } .id-card-front, .id-card-back { width: 340px; } }
   </style>
 </head>
 <body>
@@ -175,116 +227,15 @@ async function renderReports(){var now=new Date();var rpt=await callGS('getFinan
 async function loadReport(){var month=parseInt($sel('#reportMonth')?.value||0);var year=parseInt($sel('#reportYear')?.value||new Date().getFullYear());showLoading();var rpt=await callGS('getFinancialReport',month||null,year||null);hideLoading();if(rpt&&rpt.success){App.currentReport=rpt;navTo('reports');}}
 function shareReportWA(){var rpt=App.currentReport;if(!rpt)return;var msg='*School ERP Report*\n\nIncome: PKR '+rpt.totalIncome.toLocaleString()+'\nExpenses: PKR '+rpt.totalExpenses.toLocaleString()+'\nProfit: PKR '+rpt.profit.toLocaleString();var num=prompt('WhatsApp number:','');if(num)window.open('https://wa.me/'+num.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(msg),'_blank');}
 
-// ==================== EXAM REGISTRATION WITH SEARCH & AUTO ROLL NO ====================
+// ==================== EXAM REGISTRATION ====================
 async function renderExams(){App.students=(await callGS('getStudents'))||[];var registrations=(await callGS('getExamRegistrations'))||[];var examTypes=await callGS('getExamTypes')||[];var h='<div class="d-flex justify-content-between mb-3"><h4><i class="bi bi-pencil-square me-2"></i>Exam Registration</h4><button class="btn btn-primary" onclick="showExamRegForm()"><i class="bi bi-plus-lg"></i> Register Student</button></div>';h+='<div class="card mb-3"><div class="card-header">Filters</div><div class="card-body"><div class="row g-2"><div class="col-md-2"><select class="form-select" id="examTypeFilter" onchange="filterExamTable()"><option value="">All Exam Types</option>'+examTypes.map(function(e){return '<option>'+e+'</option>';}).join('')+'</select></div><div class="col-md-2"><input class="form-control" id="examClassFilter" placeholder="Filter by Class" oninput="filterExamTable()"></div><div class="col-md-2"><button class="btn btn-success btn-sm" onclick="printExamList()"><i class="bi bi-printer"></i> Print</button><button class="btn btn-info btn-sm ms-1" onclick="shareExamListWA()"><i class="bi bi-whatsapp"></i> Share</button></div></div></div></div>';h+='<div class="card"><table class="table" id="examTable"><thead><tr><th>Reg ID</th><th>Student</th><th>Class</th><th>Roll No</th><th>Exam</th><th>Year</th><th>Subjects</th><th>Status</th><th>Actions</th></tr></thead><tbody>';registrations.forEach(function(r){var st=App.students.find(function(s){return s.StudentID===r.StudentID;});var rollNo=st?st.RollNo:'-';h+='<tr data-exam="'+r.ExamType+'" data-class="'+r.Class+'"><td>'+r.RegistrationID+'</td><td><strong>'+r.StudentName+'</strong><br><small>'+r.StudentID+'</small></td><td>'+r.Class+'</td><td>'+rollNo+'</td><td>'+r.ExamType+'</td><td>'+r.ExamYear+'</td><td>'+r.Subjects+'</td><td><span class="badge bg-success">'+r.Status+'</span></td><td><button class="btn btn-sm btn-info me-1" onclick="editExamReg(\''+r.RegistrationID+'\')"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-danger me-1" onclick="delExamReg(\''+r.RegistrationID+'\')"><i class="bi bi-trash"></i></button><button class="btn btn-sm btn-success" onclick="shareExamRegWA(\''+r.RegistrationID+'\')"><i class="bi bi-whatsapp"></i></button></td></tr>';});h+='</tbody></table></div>';return h;}
 function filterExamTable(){var et=$sel('#examTypeFilter')?.value||'';var ec=$sel('#examClassFilter')?.value.toLowerCase()||'';document.querySelectorAll('#examTable tbody tr').forEach(function(r){var m1=!et||r.dataset.exam===et;var m2=!ec||r.dataset.class.toLowerCase().includes(ec);r.style.display=m1&&m2?'':'none';});}
 
-// ==================== EXAM REG FORM WITH STUDENT SEARCH & AUTO ROLL NO ====================
-function showExamRegForm(rid){
-  var examTypes=['Annual Examination','Supplementary Examination','Mid-Term Examination','Term Examination'];
-  var defaultSubjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology','History','Geography'];
-  
-  var h='<div class="modal fade" id="examRegModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-primary text-white"><h5><i class="bi bi-pencil-square me-2"></i>Exam Registration</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body"><form id="examRegForm" class="row g-3">';
-  
-  // Student Search & Selection with Auto Roll No
-  h+='<div class="col-12"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-search me-2"></i>Search & Select Student</h6></div>';
-  h+='<div class="col-md-4"><label class="form-label">Search by Name</label><input class="form-control" id="examStudentSearchName" placeholder="Type student name..." oninput="filterExamStudentList()"></div>';
-  h+='<div class="col-md-4"><label class="form-label">Search by ID</label><input class="form-control" id="examStudentSearchID" placeholder="Type Student ID..." oninput="filterExamStudentList()"></div>';
-  h+='<div class="col-md-4"><label class="form-label">Filter by Class</label><select class="form-select" id="examStudentSearchClass" onchange="filterExamStudentList()"><option value="">All Classes</option>';
-  var classes=['Play Group','Nursery','Prep','Class 1','Class 2','Class 3','Class 4','Class 5','Class 6','Class 7','Class 8','Class 9','Class 10','Class 11','Class 12'];
-  classes.forEach(function(c){h+='<option value="'+c+'">'+c+'</option>';});
-  h+='</select></div>';
-  
-  // Student List with Radio Selection
-  h+='<div class="col-12"><div style="max-height:250px;overflow-y:auto;border:1px solid #ddd;border-radius:10px;" id="examStudentListContainer">';
-  App.students.forEach(function(s){
-    h+='<div class="exam-student-item p-2 border-bottom" data-name="'+s.FullName.toLowerCase()+'" data-id="'+s.StudentID.toLowerCase()+'" data-class="'+s.Class+'">';
-    h+='<label class="d-flex align-items-center w-100" style="cursor:pointer;">';
-    h+='<input type="radio" name="studentId" value="'+s.StudentID+'" class="me-2" onchange="autoFillExamRollNo()">';
-    h+='<div><strong>'+s.FullName+'</strong> <span class="student-id-badge ms-2">'+s.StudentID+'</span><br><small>Class: '+s.Class+' - '+s.Section+' | Roll No: <strong>'+s.RollNo+'</strong> | GR: '+s.GRNo+'</small></div>';
-    h+='</label></div>';
-  });
-  h+='</div></div>';
-  
-  // Auto Roll Number Display
-  h+='<div class="col-md-6 mt-3"><label class="form-label">Auto Roll Number for Exam</label><input class="form-control" id="examAutoRollNo" readonly placeholder="Select student to auto-generate"><small class="text-muted">Format: CLASS-ROLLNO (auto-generated)</small></div>';
-  
-  h+='<div class="col-md-3 mt-3"><label class="form-label">Exam Type <span class="text-danger">*</span></label><select class="form-select" name="examType" required>';examTypes.forEach(function(e){h+='<option value="'+e+'">'+e+'</option>';});h+='</select></div>';
-  h+='<div class="col-md-3 mt-3"><label class="form-label">Exam Year <span class="text-danger">*</span></label><input class="form-control" name="examYear" value="'+new Date().getFullYear()+'" required></div>';
-  
-  // Subjects
-  h+='<div class="col-12 mt-3"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-book me-2"></i>Select Subjects</h6><div class="row g-2" id="examSubjectsContainer">';
-  defaultSubjects.forEach(function(s){h+='<div class="col-md-3 col-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="subjects" value="'+s+'" id="sub_'+s.replace(/\s/g,'_')+'"><label class="form-check-label" for="sub_'+s.replace(/\s/g,'_')+'">'+s+'</label></div></div>';});
-  h+='</div><div class="col-12 mt-2"><div class="input-group"><input type="text" class="form-control" id="customSubjectInput" placeholder="Enter custom subject..."><button type="button" class="btn btn-outline-primary" onclick="addCustomExamSubject()"><i class="bi bi-plus-lg"></i> Add Custom</button></div></div></div>';
-  
-  // Fee & Permission
-  h+='<div class="col-12 mt-3"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-cash me-2"></i>Fee & Permission</h6></div>';
-  h+='<div class="col-md-6"><label class="form-label">Fee Status</label><select class="form-select" name="feeStatus"><option value="Cleared">Cleared</option><option value="Pending">Pending</option><option value="Special Permission">Special Permission</option></select></div>';
-  h+='<div class="col-md-6"><label class="form-label">Permission By</label><input class="form-control" name="specialPermission" placeholder="Principal/Admin name"></div>';
-  
-  h+='</form></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary btn-lg" onclick="saveExamReg()"><i class="bi bi-check-lg me-2"></i>Register for Exam</button></div></div></div></div>';
-  
-  $sel('#modalContainer').innerHTML = h;
-  new bootstrap.Modal($sel('#examRegModal')).show();
-}
-
-function filterExamStudentList() {
-  var nameQ = ($sel('#examStudentSearchName')?.value || '').toLowerCase();
-  var idQ = ($sel('#examStudentSearchID')?.value || '').toLowerCase();
-  var classQ = $sel('#examStudentSearchClass')?.value || '';
-  
-  document.querySelectorAll('.exam-student-item').forEach(function(item) {
-    var nameMatch = !nameQ || item.dataset.name.includes(nameQ);
-    var idMatch = !idQ || item.dataset.id.includes(idQ);
-    var classMatch = !classQ || item.dataset.class === classQ;
-    item.style.display = (nameMatch && idMatch && classMatch) ? '' : 'none';
-  });
-}
-
-function autoFillExamRollNo() {
-  var selectedRadio = document.querySelector('input[name="studentId"]:checked');
-  if (selectedRadio) {
-    var sid = selectedRadio.value;
-    var student = App.students.find(function(s) { return s.StudentID === sid; });
-    if (student) {
-      var autoRoll = (student.Class ? student.Class.replace(/\s/g,'') : 'CL') + '-' + (student.RollNo || '00');
-      $sel('#examAutoRollNo').value = autoRoll;
-    }
-  }
-}
-
-function addCustomExamSubject() {
-  var input = $sel('#customSubjectInput'); if (!input) return;
-  var subjectName = input.value.trim();
-  if (!subjectName) { showToast('Enter subject name', 'warning'); return; }
-  var existing = document.querySelectorAll('#examSubjectsContainer input[type="checkbox"]');
-  var exists = false;
-  existing.forEach(function(cb) { if (cb.value.toLowerCase() === subjectName.toLowerCase()) exists = true; });
-  if (exists) { showToast('Already in list!', 'warning'); input.value = ''; return; }
-  var container = $sel('#examSubjectsContainer');
-  var div = document.createElement('div'); div.className = 'col-md-3 col-6';
-  var id = 'sub_custom_' + Date.now();
-  div.innerHTML = '<div class="form-check"><input class="form-check-input" type="checkbox" name="subjects" value="' + subjectName + '" id="' + id + '" checked><label class="form-check-label" for="' + id + '">' + subjectName + ' <span class="badge bg-info">Custom</span></label></div>';
-  container.appendChild(div);
-  input.value = '';
-  showToast('Subject "' + subjectName + '" added!', 'success');
-}
-
-async function saveExamReg() {
-  var f = $sel('#examRegForm'); if (!f) return;
-  var fd = new FormData(f); var d = { subjects: [] };
-  fd.forEach(function(v, k) { if (k === 'subjects') { d.subjects.push(v); } else { d[k] = v; } });
-  if (!d.studentId) { showToast('Select a student', 'warning'); return; }
-  if (!d.examType) { showToast('Select exam type', 'warning'); return; }
-  if (!d.examYear) { showToast('Enter exam year', 'warning'); return; }
-  if (d.subjects.length === 0) { showToast('Select at least one subject', 'warning'); return; }
-  showLoading();
-  var res = await callGS('registerForExam', d.studentId, d.examType, d.examYear, d.subjects, d.feeStatus, d.specialPermission);
-  hideLoading();
-  if (res && res.success) { showToast('Registered! ID: ' + res.registrationId, 'success'); bootstrap.Modal.getInstance($sel('#examRegModal')).hide(); navTo('exams'); }
-  else { showToast(res?.message || 'Failed', 'danger'); }
-}
-
+function showExamRegForm(rid){var examTypes=['Annual Examination','Supplementary Examination','Mid-Term Examination','Term Examination'];var defaultSubjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology','History','Geography'];var h='<div class="modal fade" id="examRegModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-primary text-white"><h5><i class="bi bi-pencil-square me-2"></i>Exam Registration</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body"><form id="examRegForm" class="row g-3">';h+='<div class="col-12"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-search me-2"></i>Search & Select Student</h6></div>';h+='<div class="col-md-4"><label class="form-label">Search by Name</label><input class="form-control" id="examStudentSearchName" placeholder="Type student name..." oninput="filterExamStudentList()"></div>';h+='<div class="col-md-4"><label class="form-label">Search by ID</label><input class="form-control" id="examStudentSearchID" placeholder="Type Student ID..." oninput="filterExamStudentList()"></div>';h+='<div class="col-md-4"><label class="form-label">Filter by Class</label><select class="form-select" id="examStudentSearchClass" onchange="filterExamStudentList()"><option value="">All Classes</option>';var classes=['Play Group','Nursery','Prep','Class 1','Class 2','Class 3','Class 4','Class 5','Class 6','Class 7','Class 8','Class 9','Class 10','Class 11','Class 12'];classes.forEach(function(c){h+='<option value="'+c+'">'+c+'</option>';});h+='</select></div>';h+='<div class="col-12"><div style="max-height:250px;overflow-y:auto;border:1px solid #ddd;border-radius:10px;" id="examStudentListContainer">';App.students.forEach(function(s){h+='<div class="exam-student-item p-2 border-bottom" data-name="'+s.FullName.toLowerCase()+'" data-id="'+s.StudentID.toLowerCase()+'" data-class="'+s.Class+'"><label class="d-flex align-items-center w-100" style="cursor:pointer;"><input type="radio" name="studentId" value="'+s.StudentID+'" class="me-2" onchange="autoFillExamRollNo()"><div><strong>'+s.FullName+'</strong> <span class="student-id-badge ms-2">'+s.StudentID+'</span><br><small>Class: '+s.Class+' - '+s.Section+' | Roll No: <strong>'+s.RollNo+'</strong> | GR: '+s.GRNo+'</small></div></label></div>';});h+='</div></div>';h+='<div class="col-md-6 mt-3"><label class="form-label">Auto Roll Number for Exam</label><input class="form-control" id="examAutoRollNo" readonly placeholder="Select student to auto-generate"><small class="text-muted">Format: CLASS-ROLLNO (auto-generated)</small></div>';h+='<div class="col-md-3 mt-3"><label class="form-label">Exam Type <span class="text-danger">*</span></label><select class="form-select" name="examType" required>';examTypes.forEach(function(e){h+='<option value="'+e+'">'+e+'</option>';});h+='</select></div>';h+='<div class="col-md-3 mt-3"><label class="form-label">Exam Year <span class="text-danger">*</span></label><input class="form-control" name="examYear" value="'+new Date().getFullYear()+'" required></div>';h+='<div class="col-12 mt-3"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-book me-2"></i>Select Subjects</h6><div class="row g-2" id="examSubjectsContainer">';defaultSubjects.forEach(function(s){h+='<div class="col-md-3 col-6"><div class="form-check"><input class="form-check-input" type="checkbox" name="subjects" value="'+s+'" id="sub_'+s.replace(/\s/g,'_')+'"><label class="form-check-label" for="sub_'+s.replace(/\s/g,'_')+'">'+s+'</label></div></div>';});h+='</div><div class="col-12 mt-2"><div class="input-group"><input type="text" class="form-control" id="customSubjectInput" placeholder="Enter custom subject..."><button type="button" class="btn btn-outline-primary" onclick="addCustomExamSubject()"><i class="bi bi-plus-lg"></i> Add Custom</button></div></div></div>';h+='<div class="col-12 mt-3"><h6 class="text-primary border-bottom pb-2"><i class="bi bi-cash me-2"></i>Fee & Permission</h6></div>';h+='<div class="col-md-6"><label class="form-label">Fee Status</label><select class="form-select" name="feeStatus"><option value="Cleared">Cleared</option><option value="Pending">Pending</option><option value="Special Permission">Special Permission</option></select></div>';h+='<div class="col-md-6"><label class="form-label">Permission By</label><input class="form-control" name="specialPermission" placeholder="Principal/Admin name"></div>';h+='</form></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary btn-lg" onclick="saveExamReg()"><i class="bi bi-check-lg me-2"></i>Register for Exam</button></div></div></div></div>';$sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#examRegModal')).show();}
+function filterExamStudentList(){var nameQ=($sel('#examStudentSearchName')?.value||'').toLowerCase();var idQ=($sel('#examStudentSearchID')?.value||'').toLowerCase();var classQ=$sel('#examStudentSearchClass')?.value||'';document.querySelectorAll('.exam-student-item').forEach(function(item){var nameMatch=!nameQ||item.dataset.name.includes(nameQ);var idMatch=!idQ||item.dataset.id.includes(idQ);var classMatch=!classQ||item.dataset.class===classQ;item.style.display=(nameMatch&&idMatch&&classMatch)?'':'none';});}
+function autoFillExamRollNo(){var selectedRadio=document.querySelector('input[name="studentId"]:checked');if(selectedRadio){var sid=selectedRadio.value;var student=App.students.find(function(s){return s.StudentID===sid;});if(student){var autoRoll=(student.Class?student.Class.replace(/\s/g,''):'CL')+'-'+(student.RollNo||'00');$sel('#examAutoRollNo').value=autoRoll;}}}
+function addCustomExamSubject(){var input=$sel('#customSubjectInput');if(!input)return;var subjectName=input.value.trim();if(!subjectName){showToast('Enter subject name','warning');return;}var existing=document.querySelectorAll('#examSubjectsContainer input[type="checkbox"]');var exists=false;existing.forEach(function(cb){if(cb.value.toLowerCase()===subjectName.toLowerCase())exists=true;});if(exists){showToast('Already in list!','warning');input.value='';return;}var container=$sel('#examSubjectsContainer');var div=document.createElement('div');div.className='col-md-3 col-6';var id='sub_custom_'+Date.now();div.innerHTML='<div class="form-check"><input class="form-check-input" type="checkbox" name="subjects" value="'+subjectName+'" id="'+id+'" checked><label class="form-check-label" for="'+id+'">'+subjectName+' <span class="badge bg-info">Custom</span></label></div>';container.appendChild(div);input.value='';showToast('Subject "'+subjectName+'" added!','success');}
+async function saveExamReg(){var f=$sel('#examRegForm');if(!f)return;var fd=new FormData(f);var d={subjects:[]};fd.forEach(function(v,k){if(k==='subjects'){d.subjects.push(v);}else{d[k]=v;}});if(!d.studentId){showToast('Select a student','warning');return;}if(!d.examType){showToast('Select exam type','warning');return;}if(!d.examYear){showToast('Enter exam year','warning');return;}if(d.subjects.length===0){showToast('Select at least one subject','warning');return;}showLoading();var res=await callGS('registerForExam',d.studentId,d.examType,d.examYear,d.subjects,d.feeStatus,d.specialPermission);hideLoading();if(res&&res.success){showToast('Registered! ID: '+res.registrationId,'success');bootstrap.Modal.getInstance($sel('#examRegModal')).hide();navTo('exams');}else{showToast(res?.message||'Failed','danger');}}
 function editExamReg(rid){showToast('Edit: '+rid,'info');}
 async function delExamReg(rid){if(!confirm('Delete?'))return;showLoading();await callGS('deleteExamRegistration',rid);hideLoading();showToast('Deleted!','warning');navTo('exams');}
 function shareExamRegWA(rid){var num=prompt('WhatsApp number:','');if(num)window.open('https://wa.me/'+num.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent('Exam Registration: '+rid),'_blank');}
@@ -295,49 +246,8 @@ function shareExamListWA(){var rows=document.querySelectorAll('#examTable tbody 
 async function renderResults(){var results=(await callGS('getResultCards'))||[];App.students=(await callGS('getStudents'))||[];var h='<div class="d-flex justify-content-between mb-3"><h4><i class="bi bi-award me-2"></i>Result Cards</h4><button class="btn btn-primary" onclick="showResultForm()"><i class="bi bi-plus-lg"></i> Create Result Card</button></div>';h+='<div class="card mb-3"><div class="card-header">Filters</div><div class="card-body"><div class="row g-2"><div class="col-md-3"><input class="form-control" id="resClassFilter" placeholder="Class" oninput="filterResTable()"></div><div class="col-md-3"><input class="form-control" id="resStudentFilter" placeholder="Student ID/Name" oninput="filterResTable()"></div></div></div></div>';h+='<div class="card"><table class="table" id="resTable"><thead><tr><th>Result ID</th><th>Student</th><th>Class</th><th>Roll No</th><th>Exam</th><th>Grade</th><th>%</th><th>Actions</th></tr></thead><tbody>';results.forEach(function(r){var st=App.students.find(function(s){return s.StudentID===r.StudentID;});var rollNo=st?st.RollNo:'-';h+='<tr data-class="'+r.Class+'" data-student="'+r.StudentName+' '+r.StudentID+'"><td>'+r.ResultID+'</td><td><strong>'+r.StudentName+'</strong><br><small>'+r.StudentID+'</small></td><td>'+r.Class+'</td><td>'+rollNo+'</td><td>'+r.ExamType+'</td><td>'+r.Grade+'</td><td>'+r.Percentage+'%</td><td><button class="btn btn-sm btn-info me-1" onclick="editResultCard(\''+r.ResultID+'\')"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-danger me-1" onclick="delResultCard(\''+r.ResultID+'\')"><i class="bi bi-trash"></i></button><button class="btn btn-sm btn-success" onclick="shareResultWA(\''+r.ResultID+'\')"><i class="bi bi-whatsapp"></i></button></td></tr>';});h+='</tbody></table></div>';return h;}
 function filterResTable(){var cls=$sel('#resClassFilter')?.value.toLowerCase()||'';var stu=$sel('#resStudentFilter')?.value.toLowerCase()||'';document.querySelectorAll('#resTable tbody tr').forEach(function(r){var m1=!cls||r.dataset.class.toLowerCase().includes(cls);var m2=!stu||r.dataset.student.toLowerCase().includes(stu);r.style.display=m1&&m2?'':'none';});}
 
-function showResultForm(rid){
-  var subjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology','History','Geography'];
-  var h='<div class="modal fade" id="resModal"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header bg-success text-white"><h5><i class="bi bi-award me-2"></i>Result Card</h5></div><div class="modal-body"><form id="resForm" class="row g-3">';
-  
-  // Student Search in Result Card
-  h+='<div class="col-12"><h6 class="text-success border-bottom pb-2"><i class="bi bi-search me-2"></i>Search Student</h6></div>';
-  h+='<div class="col-md-4"><label>Search by Name</label><input class="form-control" id="resStudentSearchName" placeholder="Student name..." oninput="filterResStudentList()"></div>';
-  h+='<div class="col-md-4"><label>Search by ID</label><input class="form-control" id="resStudentSearchID" placeholder="Student ID..." oninput="filterResStudentList()"></div>';
-  h+='<div class="col-md-4"><label>Search by Roll No</label><input class="form-control" id="resStudentSearchRoll" placeholder="Roll No..." oninput="filterResStudentList()"></div>';
-  
-  h+='<div class="col-12"><div style="max-height:200px;overflow-y:auto;border:1px solid #ddd;border-radius:10px;" id="resStudentListContainer">';
-  App.students.forEach(function(s){
-    h+='<div class="res-student-item p-2 border-bottom" data-name="'+s.FullName.toLowerCase()+'" data-id="'+s.StudentID.toLowerCase()+'" data-roll="'+(s.RollNo||'').toLowerCase()+'">';
-    h+='<label class="d-flex align-items-center w-100" style="cursor:pointer;">';
-    h+='<input type="radio" name="studentId" value="'+s.StudentID+'" class="me-2">';
-    h+='<div><strong>'+s.FullName+'</strong> <span class="student-id-badge ms-2">'+s.StudentID+'</span><br><small>Class: '+s.Class+' - '+s.Section+' | Roll: '+s.RollNo+' | GR: '+s.GRNo+'</small></div>';
-    h+='</label></div>';
-  });
-  h+='</div></div>';
-  
-  h+='<div class="col-md-4"><label>Exam Type</label><select class="form-select" name="examType"><option>Annual Examination</option><option>Mid-Term</option><option>Term Examination</option></select></div>';
-  h+='<div class="col-md-3"><label>Exam Year</label><input class="form-control" name="examYear" value="'+new Date().getFullYear()+'"></div>';
-  h+='<div class="col-md-2"><label>Total Marks</label><input type="number" class="form-control" name="totalMarks" value="500"></div>';
-  h+='<div class="col-12"><h6 class="border-bottom pb-2 mt-3">Subject Marks</h6><div class="row g-2" id="subjectMarksRow">';
-  subjects.forEach(function(s){h+='<div class="col-md-4"><label>'+s+'</label><div class="input-group"><input type="text" class="form-control subject-name" value="'+s+'" readonly><input type="number" class="form-control subject-marks" placeholder="Marks" max="100" onchange="calcPercentage()"></div></div>';});
-  h+='</div><button type="button" class="btn btn-sm btn-outline-primary mt-2" onclick="addCustomSubject()"><i class="bi bi-plus"></i> Add Custom Subject</button></div>';
-  h+='<div class="col-md-4"><label>Percentage</label><input class="form-control" id="resPercentage" readonly></div><div class="col-md-4"><label>Grade</label><input class="form-control" id="resGrade" readonly></div>';
-  h+='<div class="col-md-4"><label>Remarks</label><input class="form-control" name="remarks"></div></form></div><div class="modal-footer"><button class="btn btn-success" onclick="saveResultCard()">Save Result</button></div></div></div></div>';
-  $sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#resModal')).show();
-}
-
-function filterResStudentList() {
-  var nameQ = ($sel('#resStudentSearchName')?.value || '').toLowerCase();
-  var idQ = ($sel('#resStudentSearchID')?.value || '').toLowerCase();
-  var rollQ = ($sel('#resStudentSearchRoll')?.value || '').toLowerCase();
-  document.querySelectorAll('.res-student-item').forEach(function(item) {
-    var nm = !nameQ || item.dataset.name.includes(nameQ);
-    var im = !idQ || item.dataset.id.includes(idQ);
-    var rm = !rollQ || item.dataset.roll.includes(rollQ);
-    item.style.display = (nm && im && rm) ? '' : 'none';
-  });
-}
-
+function showResultForm(rid){var subjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology','History','Geography'];var h='<div class="modal fade" id="resModal"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header bg-success text-white"><h5><i class="bi bi-award me-2"></i>Result Card</h5></div><div class="modal-body"><form id="resForm" class="row g-3">';h+='<div class="col-12"><h6 class="text-success border-bottom pb-2"><i class="bi bi-search me-2"></i>Search Student</h6></div>';h+='<div class="col-md-4"><label>Search by Name</label><input class="form-control" id="resStudentSearchName" placeholder="Student name..." oninput="filterResStudentList()"></div>';h+='<div class="col-md-4"><label>Search by ID</label><input class="form-control" id="resStudentSearchID" placeholder="Student ID..." oninput="filterResStudentList()"></div>';h+='<div class="col-md-4"><label>Search by Roll No</label><input class="form-control" id="resStudentSearchRoll" placeholder="Roll No..." oninput="filterResStudentList()"></div>';h+='<div class="col-12"><div style="max-height:200px;overflow-y:auto;border:1px solid #ddd;border-radius:10px;" id="resStudentListContainer">';App.students.forEach(function(s){h+='<div class="res-student-item p-2 border-bottom" data-name="'+s.FullName.toLowerCase()+'" data-id="'+s.StudentID.toLowerCase()+'" data-roll="'+(s.RollNo||'').toLowerCase()+'"><label class="d-flex align-items-center w-100" style="cursor:pointer;"><input type="radio" name="studentId" value="'+s.StudentID+'" class="me-2"><div><strong>'+s.FullName+'</strong> <span class="student-id-badge ms-2">'+s.StudentID+'</span><br><small>Class: '+s.Class+' - '+s.Section+' | Roll: '+s.RollNo+' | GR: '+s.GRNo+'</small></div></label></div>';});h+='</div></div>';h+='<div class="col-md-4"><label>Exam Type</label><select class="form-select" name="examType"><option>Annual Examination</option><option>Mid-Term</option><option>Term Examination</option></select></div>';h+='<div class="col-md-3"><label>Exam Year</label><input class="form-control" name="examYear" value="'+new Date().getFullYear()+'"></div>';h+='<div class="col-md-2"><label>Total Marks</label><input type="number" class="form-control" name="totalMarks" value="500"></div>';h+='<div class="col-12"><h6 class="border-bottom pb-2 mt-3">Subject Marks</h6><div class="row g-2" id="subjectMarksRow">';subjects.forEach(function(s){h+='<div class="col-md-4"><label>'+s+'</label><div class="input-group"><input type="text" class="form-control subject-name" value="'+s+'" readonly><input type="number" class="form-control subject-marks" placeholder="Marks" max="100" onchange="calcPercentage()"></div></div>';});h+='</div><button type="button" class="btn btn-sm btn-outline-primary mt-2" onclick="addCustomSubject()"><i class="bi bi-plus"></i> Add Custom Subject</button></div>';h+='<div class="col-md-4"><label>Percentage</label><input class="form-control" id="resPercentage" readonly></div><div class="col-md-4"><label>Grade</label><input class="form-control" id="resGrade" readonly></div>';h+='<div class="col-md-4"><label>Remarks</label><input class="form-control" name="remarks"></div></form></div><div class="modal-footer"><button class="btn btn-success" onclick="saveResultCard()">Save Result</button></div></div></div></div>';$sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#resModal')).show();}
+function filterResStudentList(){var nameQ=($sel('#resStudentSearchName')?.value||'').toLowerCase();var idQ=($sel('#resStudentSearchID')?.value||'').toLowerCase();var rollQ=($sel('#resStudentSearchRoll')?.value||'').toLowerCase();document.querySelectorAll('.res-student-item').forEach(function(item){var nm=!nameQ||item.dataset.name.includes(nameQ);var im=!idQ||item.dataset.id.includes(idQ);var rm=!rollQ||item.dataset.roll.includes(rollQ);item.style.display=(nm&&im&&rm)?'':'none';});}
 function addCustomSubject(){var row=$sel('#subjectMarksRow');var div=document.createElement('div');div.className='col-md-4';div.innerHTML='<label>Custom Subject</label><div class="input-group"><input type="text" class="form-control subject-name" placeholder="Subject name"><input type="number" class="form-control subject-marks" placeholder="Marks" max="100" onchange="calcPercentage()"><button class="btn btn-outline-danger" onclick="this.closest(\'.col-md-4\').remove();calcPercentage();"><i class="bi bi-x"></i></button></div>';row.appendChild(div);}
 function calcPercentage(){var names=document.querySelectorAll('.subject-name');var marks=document.querySelectorAll('.subject-marks');var total=0,obt=0;marks.forEach(function(m,i){var v=parseFloat(m.value)||0;if(v>0){obt+=v;total+=100;}});if(total>0){var pct=((obt/total)*100).toFixed(1);if($sel('#resPercentage'))$sel('#resPercentage').value=pct+'%';var grade='F';if(pct>=90)grade='A+';else if(pct>=80)grade='A';else if(pct>=70)grade='B';else if(pct>=60)grade='C';else if(pct>=50)grade='D';if($sel('#resGrade'))$sel('#resGrade').value=grade;}}
 async function saveResultCard(){var names=document.querySelectorAll('.subject-name');var marks=document.querySelectorAll('.subject-marks');var subjects=[],marksObj={};names.forEach(function(n,i){if(n.value&&marks[i].value){subjects.push(n.value);marksObj[n.value]=parseFloat(marks[i].value)||0;}});var f=$sel('#resForm');var fd=new FormData(f);var d={};fd.forEach(function(v,k){d[k]=v;});d.subjects=subjects;d.marks=marksObj;d.percentage=parseFloat(($sel('#resPercentage')?.value||'0').replace('%',''));d.grade=$sel('#resGrade')?.value||'';showLoading();var res=await callGS('saveResultCard',d);hideLoading();if(res&&res.success){showToast('Result saved!','success');bootstrap.Modal.getInstance($sel('#resModal')).hide();navTo('results');}}
@@ -345,12 +255,170 @@ function editResultCard(rid){showToast('Edit: '+rid,'info');}
 async function delResultCard(rid){if(!confirm('Delete?'))return;showLoading();await callGS('deleteResultCard',rid);hideLoading();showToast('Deleted!','warning');navTo('results');}
 function shareResultWA(rid){var num=prompt('WhatsApp number:','');if(num)window.open('https://wa.me/'+num.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent('Result Card: '+rid),'_blank');}
 
-// ==================== TEST RESULTS ====================
+// ==================== TEST RESULTS WITH STUDENT SEARCH ====================
 async function renderTests(){var tests=(await callGS('getTestResults'))||[];App.students=(await callGS('getStudents'))||[];var testTypes=await callGS('getTestTypes')||[];var subjects=await callGS('getDefaultSubjects')||[];var h='<div class="d-flex justify-content-between mb-3"><h4><i class="bi bi-clipboard-check me-2"></i>Test Results</h4><button class="btn btn-primary" onclick="showTestForm()"><i class="bi bi-plus-lg"></i> Add Test Result</button></div>';h+='<div class="card mb-3"><div class="card-header">Filters</div><div class="card-body"><div class="row g-2"><div class="col-md-2"><input class="form-control" id="testStudentFilter" placeholder="Student" oninput="filterTestTable()"></div><div class="col-md-2"><input class="form-control" id="testClassFilter" placeholder="Class" oninput="filterTestTable()"></div><div class="col-md-2"><select class="form-select" id="testTypeFilter" onchange="filterTestTable()"><option value="">All Types</option>'+testTypes.map(function(t){return '<option>'+t+'</option>';}).join('')+'</select></div><div class="col-md-2"><select class="form-select" id="testSubjectFilter" onchange="filterTestTable()"><option value="">All Subjects</option>'+subjects.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select></div></div></div></div>';h+='<div class="card"><table class="table" id="testTable"><thead><tr><th>Test ID</th><th>Student</th><th>Class</th><th>Test Type</th><th>Subject</th><th>Marks</th><th>%</th><th>Actions</th></tr></thead><tbody>';tests.forEach(function(t){h+='<tr data-student="'+t.StudentName+' '+t.StudentID+'" data-class="'+t.Class+'" data-type="'+t.TestType+'" data-subject="'+t.Subject+'"><td>'+t.TestID+'</td><td><strong>'+t.StudentName+'</strong></td><td>'+t.Class+'</td><td>'+t.TestType+'</td><td>'+t.Subject+'</td><td>'+t.Marks+'/'+t.TotalMarks+'</td><td>'+t.Percentage+'%</td><td><button class="btn btn-sm btn-danger" onclick="delTest(\''+t.TestID+'\')"><i class="bi bi-trash"></i></button></td></tr>';});h+='</tbody></table></div>';return h;}
 function filterTestTable(){var stu=$sel('#testStudentFilter')?.value.toLowerCase()||'';var cls=$sel('#testClassFilter')?.value.toLowerCase()||'';var typ=$sel('#testTypeFilter')?.value||'';var sub=$sel('#testSubjectFilter')?.value||'';document.querySelectorAll('#testTable tbody tr').forEach(function(r){var m1=!stu||r.dataset.student.toLowerCase().includes(stu);var m2=!cls||r.dataset.class.toLowerCase().includes(cls);var m3=!typ||r.dataset.type===typ;var m4=!sub||r.dataset.subject===sub;r.style.display=m1&&m2&&m3&&m4?'':'none';});}
-function showTestForm(){var testTypes=['Weekly Test','Monthly Test','Quarterly Test','Half-Yearly Test','Pre-Board Test'];var subjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology'];var h='<div class="modal fade" id="testModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-warning text-dark"><h5>Add Test Result</h5></div><div class="modal-body"><form id="testForm" class="row g-3"><div class="col-md-6"><label>Student *</label><select class="form-select" name="studentId">'+App.students.map(function(s){return '<option value="'+s.StudentID+'">'+s.FullName+' ('+s.StudentID+')</option>';}).join('')+'</select></div><div class="col-md-6"><label>Test Type</label><select class="form-select" name="testType">'+testTypes.map(function(t){return '<option>'+t+'</option>';}).join('')+'</select></div><div class="col-md-6"><label>Subject</label><input class="form-control" name="subject" list="subjectList" placeholder="Type or select"><datalist id="subjectList">'+subjects.map(function(s){return '<option value="'+s+'">';}).join('')+'</datalist></div><div class="col-md-3"><label>Marks</label><input type="number" class="form-control" name="marks" required></div><div class="col-md-3"><label>Total Marks</label><input type="number" class="form-control" name="totalMarks" value="100"></div><div class="col-md-6"><label>Date</label><input type="date" class="form-control" name="date" value="'+new Date().toISOString().split('T')[0]+'"></div><div class="col-md-6"><label>Remarks</label><input class="form-control" name="remarks"></div></form></div><div class="modal-footer"><button class="btn btn-warning" onclick="saveTestResult()">Save</button></div></div></div></div>';$sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#testModal')).show();}
-async function saveTestResult(){var f=$sel('#testForm');var fd=new FormData(f);var d={};fd.forEach(function(v,k){d[k]=v;});d.percentage=d.totalMarks>0?((d.marks/d.totalMarks)*100).toFixed(1):0;showLoading();var res=await callGS('saveTestResult',d);hideLoading();if(res&&res.success){showToast('Test saved!','success');bootstrap.Modal.getInstance($sel('#testModal')).hide();navTo('tests');}}
-async function delTest(tid){if(!confirm('Delete?'))return;showLoading();await callGS('deleteTestResult',tid);hideLoading();showToast('Deleted!','warning');navTo('tests');}
+
+// ==================== TEST FORM WITH STUDENT SEARCH ====================
+function showTestForm(){
+  var testTypes=['Weekly Test','Monthly Test','Quarterly Test','Half-Yearly Test','Pre-Board Test'];
+  var subjects=['English','Urdu','Mathematics','Science','Islamiyat','Social Studies','Computer Science','Physics','Chemistry','Biology'];
+  var h='<div class="modal fade" id="testModal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-warning text-dark"><h5><i class="bi bi-clipboard-check me-2"></i>Add Test Result</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form id="testForm" class="row g-3">';
+  
+  // Student Search Section
+  h+='<div class="col-12"><h6 class="text-warning border-bottom pb-2"><i class="bi bi-search me-2"></i>Search Student</h6></div>';
+  h+='<div class="col-md-4"><label class="form-label">Search by Name</label><input class="form-control" id="testStudentSearchName" placeholder="Student name..." oninput="filterTestStudentList()"></div>';
+  h+='<div class="col-md-4"><label class="form-label">Search by ID</label><input class="form-control" id="testStudentSearchID" placeholder="Student ID..." oninput="filterTestStudentList()"></div>';
+  h+='<div class="col-md-4"><label class="form-label">Filter by Class</label><select class="form-select" id="testStudentSearchClass" onchange="filterTestStudentList()"><option value="">All Classes</option>';
+  var classes=['Play Group','Nursery','Prep','Class 1','Class 2','Class 3','Class 4','Class 5','Class 6','Class 7','Class 8','Class 9','Class 10','Class 11','Class 12'];
+  classes.forEach(function(c){h+='<option value="'+c+'">'+c+'</option>';});
+  h+='</select></div>';
+  
+  h+='<div class="col-12"><div style="max-height:200px;overflow-y:auto;border:1px solid #ddd;border-radius:10px;" id="testStudentListContainer">';
+  App.students.forEach(function(s){
+    h+='<div class="test-student-item p-2 border-bottom" data-name="'+s.FullName.toLowerCase()+'" data-id="'+s.StudentID.toLowerCase()+'" data-class="'+s.Class+'">';
+    h+='<label class="d-flex align-items-center w-100" style="cursor:pointer;">';
+    h+='<input type="radio" name="studentId" value="'+s.StudentID+'" class="me-2">';
+    h+='<div><strong>'+s.FullName+'</strong> <span class="student-id-badge ms-2">'+s.StudentID+'</span><br><small>Class: '+s.Class+' - '+s.Section+' | Roll: '+s.RollNo+' | GR: '+s.GRNo+'</small></div>';
+    h+='</label></div>';
+  });
+  h+='</div></div>';
+  
+  // Test Details
+  h+='<div class="col-12 mt-3"><h6 class="text-warning border-bottom pb-2"><i class="bi bi-info-circle me-2"></i>Test Details</h6></div>';
+  h+='<div class="col-md-6"><label class="form-label">Test Type</label><select class="form-select" name="testType">'+testTypes.map(function(t){return '<option>'+t+'</option>';}).join('')+'</select></div>';
+  h+='<div class="col-md-6"><label class="form-label">Subject</label><input class="form-control" name="subject" list="subjectList" placeholder="Type or select subject"><datalist id="subjectList">'+subjects.map(function(s){return '<option value="'+s+'">';}).join('')+'</datalist></div>';
+  h+='<div class="col-md-3"><label class="form-label">Marks Obtained</label><input type="number" class="form-control" name="marks" placeholder="e.g., 85" required></div>';
+  h+='<div class="col-md-3"><label class="form-label">Total Marks</label><input type="number" class="form-control" name="totalMarks" value="100"></div>';
+  h+='<div class="col-md-3"><label class="form-label">Test Date</label><input type="date" class="form-control" name="date" value="'+new Date().toISOString().split('T')[0]+'"></div>';
+  h+='<div class="col-md-3"><label class="form-label">Remarks</label><input class="form-control" name="remarks" placeholder="Optional"></div>';
+  
+  h+='</form></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button class="btn btn-warning" onclick="saveTestResult()"><i class="bi bi-check-lg me-2"></i>Save Test Result</button></div></div></div></div>';
+  
+  $sel('#modalContainer').innerHTML = h;
+  new bootstrap.Modal($sel('#testModal')).show();
+}
+
+function filterTestStudentList() {
+  var nameQ = ($sel('#testStudentSearchName')?.value || '').toLowerCase();
+  var idQ = ($sel('#testStudentSearchID')?.value || '').toLowerCase();
+  var classQ = $sel('#testStudentSearchClass')?.value || '';
+  
+  document.querySelectorAll('.test-student-item').forEach(function(item) {
+    var nameMatch = !nameQ || item.dataset.name.includes(nameQ);
+    var idMatch = !idQ || item.dataset.id.includes(idQ);
+    var classMatch = !classQ || item.dataset.class === classQ;
+    item.style.display = (nameMatch && idMatch && classMatch) ? '' : 'none';
+  });
+}
+
+async function saveTestResult(){
+  var selectedRadio = document.querySelector('input[name="studentId"]:checked');
+  if (!selectedRadio) { showToast('Please select a student', 'warning'); return; }
+  
+  var f = $sel('#testForm');
+  var fd = new FormData(f);
+  var d = {};
+  fd.forEach(function(v, k) { d[k] = v; });
+  
+  if (!d.marks || parseFloat(d.marks) < 0) { showToast('Please enter valid marks', 'warning'); return; }
+  
+  d.percentage = d.totalMarks > 0 ? ((parseFloat(d.marks) / parseFloat(d.totalMarks)) * 100).toFixed(1) : 0;
+  
+  showLoading();
+  var res = await callGS('saveTestResult', d);
+  hideLoading();
+  
+  if (res && res.success) {
+    showToast('Test result saved! ID: ' + res.testId, 'success');
+    bootstrap.Modal.getInstance($sel('#testModal')).hide();
+    navTo('tests');
+  } else {
+    showToast('Failed to save test result', 'danger');
+  }
+}
+
+async function delTest(tid){if(!confirm('Delete this test result?'))return;showLoading();await callGS('deleteTestResult',tid);hideLoading();showToast('Deleted!','warning');navTo('tests');}
+
+// ==================== ID CARDS (ORIGINAL VERSION 1 CSS) ====================
+async function renderIDCards(){App.students=(await callGS('getStudents'))||[];App.teachers=(await callGS('getTeachers'))||[];return '<div class="row g-3"><div class="col-md-6"><div class="card"><div class="card-header">Student ID Cards</div><div class="card-body">'+App.students.slice(0,10).map(function(s){return '<div class="d-flex justify-content-between py-2"><span><span class="student-id-badge me-2">'+s.StudentID+'</span>'+s.FullName+'</span><button class="btn btn-sm btn-success" onclick="showStudentIDCard(\''+s.StudentID+'\')">View Card</button></div>';}).join('')+'</div></div></div><div class="col-md-6"><div class="card"><div class="card-header">Teacher ID Cards</div><div class="card-body">'+App.teachers.slice(0,10).map(function(t){return '<div class="d-flex justify-content-between py-2"><span>'+t.Name+'</span><button class="btn btn-sm btn-accent" onclick="showTeacherIDCard(\''+t.TeacherID+'\')">View Card</button></div>';}).join('')+'</div></div></div></div>';}
+
+function showStudentIDCard(sid){
+  var s = App.students.find(function(x){return x.StudentID===sid});
+  if (!s) return showToast('Student not found','danger');
+  
+  var qrData = 'SCHOOL:'+s.StudentID+'|'+s.FullName+'|'+s.Class+'|'+s.GRNo+'|'+(App.settings.schoolName||'');
+  
+  var h = '<div class="modal fade" id="idModal"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header bg-primary text-white no-print"><h5><i class="bi bi-credit-card-2-front me-2"></i>Student ID Card - '+s.FullName+'</h5><button class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="d-flex flex-wrap gap-4 justify-content-center">';
+  
+  // FRONT SIDE
+  h += '<div class="id-card-front"><div class="card-top-bar"></div>';
+  h += '<div class="card-header-section"><span class="card-badge">STUDENT ID</span>';
+  h += '<h6 class="school-name">'+(App.settings.schoolName||'The Excellence School').toUpperCase()+'</h6>';
+  h += '<p class="school-motto">'+(App.settings.motto||'Knowledge is Power')+'</p></div>';
+  h += '<div class="card-body-section"><div class="photo-container"><img src="'+(s.ImageURL||'https://img.icons8.com/color/96/000000/user.png')+'" alt="Photo" onerror="this.src=\'https://img.icons8.com/color/96/000000/user.png\'"></div>';
+  h += '<h5 class="student-name">'+s.FullName+'</h5><div class="details-grid">';
+  h += '<div class="detail-item"><div class="detail-label">GR Number</div><div class="detail-value">'+s.GRNo+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Student ID</div><div class="detail-value">'+s.StudentID+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Class & Section</div><div class="detail-value">'+s.Class+' - '+s.Section+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Roll Number</div><div class="detail-value">'+s.RollNo+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">House</div><div class="detail-value" style="color:'+(s.House==='Blue'?'#2196F3':s.House==='Green'?'#4CAF50':s.House==='Red'?'#f44336':'#FF9800')+';">'+s.House+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Blood Group</div><div class="detail-value">'+s.BloodGroup+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Father Name</div><div class="detail-value">'+s.FatherName+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Phone</div><div class="detail-value">'+s.Phone+'</div></div>';
+  h += '</div></div>';
+  h += '<div class="card-footer-section"><span>'+(App.settings.phone||'')+'</span><span class="qr-section" id="qrStuFront"></span></div></div>';
+  
+  // BACK SIDE
+  h += '<div class="id-card-back"><div class="card-top-bar"></div><div class="back-content">';
+  h += '<h5><i class="bi bi-shield-check me-2"></i>'+(App.settings.schoolName||'School Name')+'</h5>';
+  h += '<p style="color:#1a237e;font-weight:600;">'+(App.settings.motto||'')+'</p>';
+  h += '<div class="emergency-section"><h6><i class="bi bi-exclamation-triangle-fill me-2"></i>Emergency Contacts</h6>';
+  h += '<p><strong>Father:</strong> '+(s.FatherPhone||s.Phone||'N/A')+'</p>';
+  h += '<p><strong>Mother:</strong> '+(s.MotherPhone||'N/A')+'</p>';
+  h += '<p><strong>Emergency:</strong> '+(s.EmergencyContact||'N/A')+'</p></div>';
+  h += '<div class="terms-section"><strong>Terms & Conditions:</strong><br>This card is the property of '+(App.settings.schoolName||'School')+'. If found, please return to the school address. This card must be carried at all times within school premises.</div>';
+  h += '<p class="mt-3"><strong>Address:</strong> '+(App.settings.address||'')+'</p></div>';
+  h += '<div class="back-footer">'+(App.settings.email||'')+' | '+(App.settings.website||'')+'</div></div>';
+  
+  h += '</div></div><div class="modal-footer no-print"><button class="btn btn-primary" onclick="window.print()"><i class="bi bi-printer me-2"></i>Print Both Sides</button>';
+  if (s.WhatsApp) h += '<a href="https://wa.me/'+s.WhatsApp.replace(/[^0-9]/g,'')+'?text=Student+ID+Card+-+'+encodeURIComponent(s.FullName)+'%0AID:+'+s.StudentID+'%0AClass:+'+s.Class+'" target="_blank" class="btn btn-success"><i class="bi bi-whatsapp me-2"></i>Share via WhatsApp</a>';
+  h += '</div></div></div></div>';
+  
+  $sel('#modalContainer').innerHTML = h;
+  new bootstrap.Modal($sel('#idModal')).show();
+  
+  setTimeout(function(){
+    var qrEl = $sel('#qrStuFront');
+    if (qrEl && typeof QRCode !== 'undefined') {
+      qrEl.innerHTML = '';
+      new QRCode(qrEl, { text: qrData, width: 55, height: 55 });
+    }
+  }, 500);
+}
+
+function showTeacherIDCard(tid){
+  var t = App.teachers.find(function(x){return x.TeacherID===tid});
+  if (!t) return showToast('Not found','danger');
+  
+  var h = '<div class="modal fade"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header bg-accent text-white no-print"><h5>Teacher ID Card - '+t.Name+'</h5></div><div class="modal-body"><div class="d-flex flex-wrap gap-4 justify-content-center">';
+  
+  h += '<div class="id-card-front"><div class="card-top-bar" style="background:linear-gradient(90deg,#ff6f00,#ff8f00,#ff6f00);"></div>';
+  h += '<div class="card-header-section" style="background:linear-gradient(135deg,#ff6f00,#ff8f00);"><span class="card-badge" style="background:#1a237e;">TEACHER ID</span>';
+  h += '<h6 class="school-name">'+(App.settings.schoolName||'').toUpperCase()+'</h6></div>';
+  h += '<div class="card-body-section"><div class="photo-container" style="border-color:#ff6f00;"><img src="'+(t.ImageURL||'https://img.icons8.com/color/96/user.png')+'" onerror="this.src=\'https://img.icons8.com/color/96/user.png\'"></div>';
+  h += '<h5 class="student-name">'+t.Name+'</h5><div class="details-grid">';
+  h += '<div class="detail-item"><div class="detail-label">Emp Code</div><div class="detail-value">'+t.EmpCode+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Teacher ID</div><div class="detail-value">'+t.TeacherID+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Qualification</div><div class="detail-value">'+t.Qualification+'</div></div>';
+  h += '<div class="detail-item"><div class="detail-label">Subjects</div><div class="detail-value">'+t.Subjects+'</div></div>';
+  h += '</div></div><div class="card-footer-section" style="background:linear-gradient(135deg,#ff6f00,#ff8f00);">'+(App.settings.phone||'')+'</div></div>';
+  
+  h += '</div></div><div class="modal-footer no-print"><button class="btn btn-accent" onclick="window.print()">Print</button></div></div></div></div>';
+  
+  $sel('#modalContainer').innerHTML = h;
+  new bootstrap.Modal($sel('#modalContainer .modal')).show();
+}
 
 // ==================== DATABASE ====================
 async function renderDatabase(){var sheets=await callGS('getCSVSheets')||[];var h='<h4><i class="bi bi-database me-2"></i>Database Management</h4>';h+='<div class="row g-3"><div class="col-md-6"><div class="card"><div class="card-header">Export</div><div class="card-body"><button class="btn btn-success w-100" onclick="exportCSV()"><i class="bi bi-download"></i> Download CSV</button></div></div></div><div class="col-md-6"><div class="card"><div class="card-header">Import</div><div class="card-body"><select class="form-select mb-2" id="importSheet">'+sheets.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select><textarea class="form-control mb-2" id="csvContent" rows="4" placeholder="Paste CSV..."></textarea><input type="file" class="form-control mb-2" id="csvFile" accept=".csv" onchange="readCSVFile(this)"><button class="btn btn-primary w-100" onclick="importCSV()"><i class="bi bi-upload"></i> Import</button></div></div></div></div>';h+='<div class="card mt-3"><div class="card-header">Delete by Year</div><div class="card-body"><div class="row g-2"><div class="col-md-4"><select class="form-select" id="deleteSheet">'+sheets.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select></div><div class="col-md-3"><input type="number" class="form-control" id="deleteYear" placeholder="Year" value="2023"></div><div class="col-md-3"><button class="btn btn-danger w-100" onclick="deleteByYear()"><i class="bi bi-trash"></i> Delete</button></div></div></div></div>';return h;}
@@ -358,11 +426,6 @@ async function exportCSV(){showLoading();var res=await callGS('exportAllDataToCS
 function readCSVFile(input){var file=input.files[0];if(file){var reader=new FileReader();reader.onload=function(e){$sel('#csvContent').value=e.target.result;};reader.readAsText(file);}}
 async function importCSV(){var content=$sel('#csvContent')?.value;var sheet=$sel('#importSheet')?.value;if(!content||!sheet)return showToast('Paste CSV and select sheet','warning');if(!confirm('OVERWRITE '+sheet+'?'))return;showLoading();var res=await callGS('importCSVData',content,sheet);hideLoading();if(res&&res.success){showToast(res.message,'success');}}
 async function deleteByYear(){var sheet=$sel('#deleteSheet')?.value;var year=$sel('#deleteYear')?.value;if(!year)return showToast('Enter year','warning');if(!confirm('DELETE '+sheet+' from '+year+'?'))return;showLoading();var res=await callGS('deleteDataByYear',sheet,year);hideLoading();if(res&&res.success){showToast(res.message,'warning');}}
-
-// ==================== ID CARDS ====================
-async function renderIDCards(){App.students=(await callGS('getStudents'))||[];App.teachers=(await callGS('getTeachers'))||[];return '<div class="row g-3"><div class="col-md-6"><div class="card"><div class="card-header">Students</div><div class="card-body">'+App.students.slice(0,10).map(function(s){return '<div class="d-flex justify-content-between py-2"><span><span class="student-id-badge">'+s.StudentID+'</span> '+s.FullName+'</span><button class="btn btn-sm btn-success" onclick="showStudentIDCard(\''+s.StudentID+'\')">View</button></div>';}).join('')+'</div></div></div><div class="col-md-6"><div class="card"><div class="card-header">Teachers</div><div class="card-body">'+App.teachers.slice(0,10).map(function(t){return '<div class="d-flex justify-content-between py-2"><span>'+t.Name+'</span><button class="btn btn-sm btn-accent" onclick="showTeacherIDCard(\''+t.TeacherID+'\')">View</button></div>';}).join('')+'</div></div></div></div>';}
-function showStudentIDCard(sid){var s=App.students.find(function(x){return x.StudentID===sid});if(!s)return;var qrData='SCHOOL:'+s.StudentID+'|'+s.FullName;var h='<div class="modal fade"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header no-print"><h5>ID Card</h5></div><div class="modal-body"><div class="d-flex flex-wrap gap-4 justify-content-center"><div class="id-card-front"><div class="card-top-bar"></div><div class="card-header-section"><img src="'+(App.settings.logoUrl||'https://img.icons8.com/color/96/school.png')+'" class="school-logo-img"><h6>'+(App.settings.schoolName||'School').toUpperCase()+'</h6></div><div class="card-body-section"><div class="photo-container"><img src="'+(s.ImageURL||'https://img.icons8.com/color/96/user.png')+'"></div><h5>'+s.FullName+'</h5><div class="details-grid"><div class="detail-item"><div class="detail-label">GR No</div><div class="detail-value">'+s.GRNo+'</div></div><div class="detail-item"><div class="detail-label">Student ID</div><div class="detail-value">'+s.StudentID+'</div></div><div class="detail-item"><div class="detail-label">Class</div><div class="detail-value">'+s.Class+' - '+s.Section+'</div></div><div class="detail-item"><div class="detail-label">Phone</div><div class="detail-value">'+s.Phone+'</div></div></div></div><div class="card-footer-section"><span>'+(App.settings.phone||'')+'</span><span id="qrStu"></span></div></div><div class="id-card-back"><div class="back-content"><h5>Emergency Contacts</h5><div class="emergency-section"><p><strong>Father:</strong> '+(s.FatherPhone||s.Phone)+'</p><p><strong>Mother:</strong> '+(s.MotherPhone||'N/A')+'</p></div></div><div class="back-footer">'+(App.settings.address||'')+'</div></div></div></div></div></div></div>';$sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#modalContainer .modal')).show();setTimeout(function(){var q=$sel('#qrStu');if(q&&typeof QRCode!=='undefined')new QRCode(q,{text:qrData,width:55,height:55});},500);}
-function showTeacherIDCard(tid){var t=App.teachers.find(function(x){return x.TeacherID===tid});if(!t)return;var h='<div class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header no-print"><h5>Teacher ID Card</h5></div><div class="modal-body"><div class="id-card-front"><div class="card-top-bar" style="background:linear-gradient(90deg,#ff6f00,#ff8f00,#ff6f00);"></div><div class="card-header-section" style="background:linear-gradient(135deg,#ff6f00,#ff8f00);"><img src="'+(App.settings.logoUrl||'https://img.icons8.com/color/96/school.png')+'" class="school-logo-img"><h6>'+(App.settings.schoolName||'School').toUpperCase()+'</h6></div><div class="card-body-section"><div class="photo-container" style="border-color:#ff6f00;"><img src="'+(t.ImageURL||'https://img.icons8.com/color/96/user.png')+'"></div><h5>'+t.Name+'</h5><div class="details-grid"><div class="detail-item"><div class="detail-label">Emp Code</div><div class="detail-value">'+t.EmpCode+'</div></div><div class="detail-item"><div class="detail-label">Subjects</div><div class="detail-value">'+t.Subjects+'</div></div></div></div><div class="card-footer-section" style="background:linear-gradient(135deg,#ff6f00,#ff8f00);">'+(App.settings.phone||'')+'</div></div></div></div></div></div>';$sel('#modalContainer').innerHTML=h;new bootstrap.Modal($sel('#modalContainer .modal')).show();}
 
 // ==================== ARCHIVE & REMINDERS ====================
 async function renderArchive(){var aS=(await callGS('getArchivedStudents'))||[];var aT=(await callGS('getArchivedTeachers'))||[];return '<ul class="nav nav-tabs"><li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#archS">Students ('+aS.length+')</button></li><li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#archT">Teachers ('+aT.length+')</button></li></ul><div class="tab-content mt-2"><div class="tab-pane active" id="archS"><div class="card"><table class="table"><tbody>'+(aS.length===0?'<tr><td>Empty</td></tr>':aS.map(function(r){return '<tr><td>'+(r[1]||'')+'</td><td>'+(r[2]||'')+'</td></tr>';}).join(''))+'</tbody></table></div></div><div class="tab-pane" id="archT"><div class="card"><table class="table"><tbody>'+(aT.length===0?'<tr><td>Empty</td></tr>':aT.map(function(r){return '<tr><td>'+(r[1]||'')+'</td><td>'+(r[2]||'')+'</td></tr>';}).join(''))+'</tbody></table></div></div></div>';}
